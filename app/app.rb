@@ -8,6 +8,10 @@ module Pityboy
 
     enable :sessions
 
+    get '/' do
+        'Hello'
+    end
+
     ##
     # Caching support.
     #

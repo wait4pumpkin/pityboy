@@ -12,6 +12,17 @@ test/tmp
 test/version_tmp
 tmp
 
+# padrino
+.DS_Store
+log/**/*
+tmp/**/*
+bin/*
+vendor/gems/*
+!vendor/gems/cache/
+.sass-cache/*
+db/*.db
+.*.sw*
+
 # YARD artifacts
 .yardoc
 _yardoc
