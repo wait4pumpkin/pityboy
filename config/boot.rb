@@ -7,6 +7,8 @@ require 'rubygems' unless defined?(Gem)
 require 'bundler/setup'
 Bundler.require(:default, PADRINO_ENV)
 
+Haml::Template.options[:format] = :html5
+
 ##
 # ## Enable devel logging
 #
