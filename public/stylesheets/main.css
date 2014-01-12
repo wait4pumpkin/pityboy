@@ -1,0 +1,9 @@
+body {
+	margin: 0 auto;
+}
+
+div.date-header {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+

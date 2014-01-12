@@ -6,33 +6,16 @@
     %title= [@title, "Padrino Sample Blog"].compact.join(" | ")
     %meta{ :name => 'description', :content => '' }
     %meta{ :name => 'viewport', :content => 'width=device-width' }
-    
-    = stylesheet_link_tag 'reset', 'application'
-    = javascript_include_tag 'jquery', 'application'
+
+    %link{ :href => '//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css', :rel => 'stylesheet' }
+    %link{ :href => asset_path(:css, 'main'), :rel => 'stylesheet' }
+
+    %script{ :src => '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js' }
+
     = yield_content :include
   %body
     /[if lt IE 7]<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    #header
-      %h1 Sample Padrino Blog
-      %ul.menu
-        %li= link_to 'Blog', url_for(:posts, :index)
-    #container
-      #main= yield
-      #sidebar
-        %p Recent Posts
-        %ul.bulleted
-          %li Item 1 - Lorem ipsum dolorum itsum estem
-          %li Item 2 - Lorem ipsum dolorum itsum estem
-          %li Item 3 - Lorem ipsum dolorum itsum estem
-        %p Categories
-        %ul.bulleted
-          %li Item 1 - Lorem ipsum dolorum itsum estem
-          %li Item 2 - Lorem ipsum dolorum itsum estem
-          %li Item 3 - Lorem ipsum dolorum itsum estem
-        %p Latest Comments
-        %ul.bulleted
-          %li Item 1 - Lorem ipsum dolorum itsum estem
-          %li Item 2 - Lorem ipsum dolorum itsum estem
-          %li Item 3 - Lorem ipsum dolorum itsum estem
-    #footer
-      Copyright (c) 2009-2010 Padrino
+    %header
+      
+    .container
+      = yield
