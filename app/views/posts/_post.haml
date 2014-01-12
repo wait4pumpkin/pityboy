@@ -1,20 +1,12 @@
-.post
-  .title= link_to post.title, url_for(:posts, :show, :id => post)
-  .date= time_ago_in_words(post.created_at || Time.now) + ' ago'
-  .content= simple_format(post.content)
-  .details
-    .author Posted by #{post.account.email}
-
-%article
+%article.post
   %header
-    .date-header Monday, October 15, 2012
-    %h2 Railway Novel X
+    .date-header= post.created_at.strftime("%A, %B %-d, %Y")
+    %h2.title= link_to post.title, url_for(:posts, :show, :id => post)
 
-  %p
-    Cras condimentum ante id justo molestie rhoncus. Nam placerat libero quis urna tristique eget placerat orci blandit. Morbi lobortis pharetra condimentum. Suspendisse ullamcorper magna porta libero accumsan fermentum at ac libero. Cras pellentesque semper imperdiet. Nunc congue sapien leo. Aliquam sodales tempus metus. Sed lacinia gravida egestas. Fusce tincidunt nisi sed lectus volutpat vitae blandit risus dignissim.
+  %p= simple_format(post.content)
 
   %footer
-    %p Posted by Biyan
+    %p Posted by #{post.account.name}
     %p at 11:36 PM
     %p No comments:
     %p Labels: Retro, Vintage

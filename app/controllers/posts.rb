@@ -6,7 +6,7 @@ Pityboy::App.controllers :posts do
   end
 
   get :show, :with => :id do
-      @post = find_by_id(params[:id])
+      @post = Post.find_by_id(params[:id])
       render 'posts/show'
   end
 end
