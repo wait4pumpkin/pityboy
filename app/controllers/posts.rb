@@ -5,7 +5,7 @@ Pityboy::App.controllers :posts do
     render 'posts/index'
   end
 
-  get :show, :with => :id do
+  get :index, :with => :url do
       @post = Post.find_by_id(params[:id])
       render 'posts/show'
   end
