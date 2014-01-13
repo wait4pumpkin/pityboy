@@ -5,7 +5,7 @@ Pityboy::App.controllers :posts do
     render 'posts/index'
   end
 
-  get :index, :map => '/blog/:url' do
+  get :index, :map => '/blog/:category/:url' do
       @post = Post.find_by_id(params[:id])
       render 'posts/show'
   end

@@ -1,7 +1,7 @@
 %article.post
   %header
     .date-header= post.created_at.strftime("%A, %B %-d, %Y")
-    %h2.title= link_to post.title, url_for(:posts, :index, :url => post.url)
+    %h2.title= link_to post.title, url_for(:posts, :index, :category => post.category.url,  :url => post.url)
 
   %p= simple_format(post.content)
 
