@@ -6,7 +6,9 @@ Pityboy::App.controllers :posts do
   end
 
   get :index, :map => '/blog/:category/:url' do
-      @post = Post.find_by_id(params[:id])
-      render 'posts/show'
+    @post = Post.includes(:category, :account)
+                .where({ categories: { url: params[:category] }, posts: { url: params[:url] } })
+                .limit(1).first
+    render 'posts/show'
   end
 end
