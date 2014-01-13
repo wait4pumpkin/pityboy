@@ -7,7 +7,9 @@
     %meta{ :name => 'description', :content => '' }
     %meta{ :name => 'viewport', :content => 'width=device-width' }
 
-    %link{ :href => '//libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js', :rel => 'stylesheet' }
+    %link{ :href => '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,600', :rel => 'stylesheet' }
+
+    %link{ :href => '//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css', :rel => 'stylesheet' }
     %link{ :href => asset_path(:css, 'main'), :rel => 'stylesheet' }
 
     %script{ :src => '//upcdn.b0.upaiyun.com/libs/modernizr/modernizr-2.6.2.min.js' }
@@ -15,7 +17,36 @@
     = yield_content :include
   %body
     /[if lt IE 7]<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    %header
-      
     .container
+      %header.page-header.clearfix
+        %a Pityboy
+          #{image_tag('logo.png')}
+        / %h1.pull-left pityboy
+        %nav.pull-right
+          %h3 - Categories
+          %ul.pull-left
+            %li
+            %li
+        %nav.pull-right
+          %h3 - Links
+          %ul.pull-left
+            %li
+            %li
+
       = yield
+
+    %script{ :src => 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML' }
+    %script{ :src => '//libs.baidu.com/jquery/2.0.0/jquery.min.js' }
+    %script{ :type => 'text/x-mathjax-config' }
+      :plain
+        MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          jax: ["input/TeX", "output/HTML-CSS"],
+          TeX: { equationNumbers: {autoNumber: "AMS"} }, 
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true
+          },
+          "HTML-CSS": { availableFonts: ["TeX"] }
+        });

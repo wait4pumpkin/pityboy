@@ -1,5 +1,17 @@
+body, h1, h2, h3, p {
+	font-family: Oswald, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+}
+
 body {
 	margin: 0 auto;
+}
+
+header.page-header > h1 {
+	
+}
+
+header.page-header > nav > ul {
+	
 }
 
 article.post {
@@ -20,6 +32,10 @@ h2.title {
 	text-align: center;
 	font-size: 42px;
 	font-weight: bold;
+}
+
+h2.title > a {
+	text-decoration: none;
 }
 
 article.post > footer {

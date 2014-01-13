@@ -17,6 +17,7 @@ gem 'rake'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'sass'
 gem 'haml'
+gem 'redcarpet'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'sqlite3'
 
