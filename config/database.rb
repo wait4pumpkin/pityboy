@@ -31,8 +31,10 @@ ActiveRecord::Base.configurations[:test] = {
 
 }
 
+require 'logger'
 # Setup our logger
 ActiveRecord::Base.logger = logger
+ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 # Raise exception on mass assignment protection for Active Record models.
 ActiveRecord::Base.mass_assignment_sanitizer = :strict
