@@ -3,8 +3,9 @@
     .date-header= post.created_at.strftime("%A, %B %-d, %Y")
     %h2.title= link_to post.title, url_for(:posts, :index, :category => post.category.url, :url => post.url)
 
-  :markdownEx
-    #{post.content}
+  .markdown
+    :markdownEx
+      #{post.content}
 
   %footer
     %p Posted by #{post.account.name}
