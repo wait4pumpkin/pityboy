@@ -8,6 +8,6 @@ module Haml::Filters::MarkdownEx
     markdown = Redcarpet::Markdown.new(HTMLwithMathJax, :prettify => true, 
                                        :disable_indented_code_blocks => true, 
                                        :fenced_code_blocks => true)
-    markdown.render(text)
+    HTML_Truncator.truncate(markdown.render(text), 30)
   end
 end

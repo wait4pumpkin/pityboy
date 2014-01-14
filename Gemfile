@@ -27,6 +27,7 @@ gem 'rack-test', :require => 'rack/test', :group => 'test'
 
 # Padrino Stable Gem
 gem 'padrino', '0.11.4'
+gem 'html_truncator'
 
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
