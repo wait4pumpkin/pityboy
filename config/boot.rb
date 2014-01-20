@@ -10,6 +10,9 @@ Bundler.require(:default, PADRINO_ENV)
 require 'haml/template/options'
 Haml::Template.options[:format] = :html5
 
+Padrino::Logger::Config[:development][:stream] = :stdout
+Padrino.load!
+
 ##
 # ## Enable devel logging
 #

@@ -9,7 +9,8 @@ module Pityboy
     enable :sessions
 
     get '/' do
-        'Hello'
+        status, headers, body = call env.merge("PATH_INFO" => '/blog')
+        [status, headers, body]
     end
 
     ##

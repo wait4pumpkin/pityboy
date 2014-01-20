@@ -1,13 +1,14 @@
 %article.post
   %header
     .date-header= @post.created_at.strftime("%A, %B %-d, %Y")
-    %h2.title= @post.title
+    %h2.title= link_to @post.title, url_for(:posts, :index, :category => @post.category.url, :url => @post.url)
 
-  %p= simple_format(@post.content)
+  .markdown
+    :markdownEx
+      #{@post.content}
 
   %footer
     %p Posted by #{@post.account.name}
-    %p Category: #{@post.category.name}
     %p at 11:36 PM
     %p No comments:
     %p Labels: Retro, Vintage
