@@ -15,7 +15,7 @@ gem 'rake'
 gem 'thin'
 
 # Component requirements
-gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'bcrypt', :require => 'bcrypt'
 gem 'sass'
 gem 'haml'
 gem 'redcarpet'
@@ -26,13 +26,6 @@ gem 'sqlite3'
 gem 'shoulda', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
 
-# Padrino Stable Gem
-gem 'padrino', '0.11.4'
+# Padrino Edge
+gem 'padrino', :github => 'padrino/padrino-framework'
 
-# Or Padrino Edge
-# gem 'padrino', :github => 'padrino/padrino-framework'
-
-# Or Individual Gems
-# %w(core gen helpers cache mailer admin).each do |g|
-#   gem 'padrino-' + g, '0.11.4'
-# end
